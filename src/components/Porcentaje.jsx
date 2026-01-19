@@ -1,21 +1,22 @@
-import { useState } from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
+import { useState } from "react";
 
-function Resta() {
+function Porcentaje() {
     const [num1, setNum1] = useState("");
     const [num2, setNum2] = useState("");
-    const [resultado, setResultado] = useState(null)
+    const [resultado, setResultado] = useState(null);
 
     function calcular() {
         const a = parseFloat(num1);
         const b = parseFloat(num2);
 
         if (isNaN(a) || isNaN(b)) {
-            setResultado("Ingrese un numero valido.");
+            setResultado("Ingrese un número válido.");
             return;
         }
 
-        setResultado(a - b);
+        //calculo el porcentaje y con toFixed(2) limito a 2 decimales
+        setResultado((a * (b / 100)).toFixed(2));
     }
 
     return (
@@ -32,13 +33,12 @@ function Resta() {
                 gap: 2,
             }}
         >
-
             <Typography variant="h5" textAlign="center">
-                Resta
+                Porcentaje
             </Typography>
 
             <TextField
-            label="Número 1"
+            label="Número"
             type="number"
             value={num1}
             onChange={(e) => setNum1(e.target.value)}
@@ -46,7 +46,7 @@ function Resta() {
             />
 
             <TextField
-            label="Número 2"
+            label="Porcentaje"
             type="number"
             value={num2}
             onChange={(e) => setNum2(e.target.value)}
@@ -54,7 +54,7 @@ function Resta() {
             />
 
             <Button variant="contained" onClick={calcular}>
-                Restar
+                Calcular Porcentaje
             </Button>
 
             {resultado !== null && (
@@ -63,7 +63,7 @@ function Resta() {
             </Typography>
             )}
         </Box>
-    )
+    );
 }
 
-export default Resta;
+export default Porcentaje;

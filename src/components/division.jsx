@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Box, TextField, Button, Typography } from "@mui/material";
 
 function Division() {
     const [num1, setNum1] = useState("");
@@ -18,28 +19,49 @@ function Division() {
     }
 
     return (
-        <div>
+        <Box
+            sx={{
+                maxWidth: 300,
+                mx: "auto",
+                mt: 4,
+                p: 3,
+                borderRadius: 2,
+                boxShadow: 3,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+            }}
+        >
 
-            <h2>Division</h2>
+            <Typography variant="h5" textAlign="center">
+                Division
+            </Typography>
 
-            <input
+            <TextField
+            label="Número 1"
             type="number"
-            placeholder="numero 1"
             value={num1}
             onChange={(e) => setNum1(e.target.value)}
+            fullWidth
             />
 
-            <input
+            <TextField
+            label="Número 2"
             type="number"
-            placeholder="numero 2"
             value={num2}
             onChange={(e) => setNum2(e.target.value)}
+            fullWidth
             />
 
-            <button onClick={calcular}>Dividir</button>
+            <Button variant="contained" onClick={calcular}>
+                Dividir
+            </Button>
 
-            {resultado !== null && <p>Resultado: {resultado}</p>}
-        </div>
+            {resultado !== null && (
+                <Typography variant="subtitle1" textAlign="center">
+                    Resultado: {resultado}
+                </Typography>)}
+        </Box>
     )
 }
 

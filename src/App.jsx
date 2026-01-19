@@ -1,17 +1,10 @@
-import Suma from './components/suma';
-import Resta from './components/resta';
-import Multiplicacion from './components/multiplicacion';
-import Division from './components/division';
-import React from 'react';
-import './App.css';
+import { Box, TextField, Button, Typography } from "@mui/material";
+import Components from "./components/Components";
 
 function App() {
   return (
   <div>
-    <Suma />
-    <Resta />
-    <Multiplicacion />
-    <Division />
+    <Components />
   </div>
   )
 }
