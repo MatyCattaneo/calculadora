@@ -3,7 +3,8 @@ import Suma from './Suma';
 import Resta from './Resta';
 import Multiplicacion from './Multiplicacion';
 import Division from './Division';
-import Porcentaje from './Porcentaje'
+import Porcentaje from './Porcentaje';
+import IMCCalculator from './IMCCalculator';
 
 function Components() {
   return (
@@ -15,6 +16,7 @@ function Components() {
       <Grid item xs={12} md={3}><Division /></Grid>
       {/* Fila 2 */}
       <Grid item xs={12} md={3}><Porcentaje /></Grid>
+      <Grid item xs={12} md={3}><IMCCalculator /></Grid>
     </Grid>
   )
 }
