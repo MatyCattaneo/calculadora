@@ -5,6 +5,8 @@ import Multiplicacion from './Multiplicacion';
 import Division from './Division';
 import Porcentaje from './Porcentaje';
 import IMCCalculator from './IMCCalculator';
+import CuantaAguaTomar from './CuantaAguaTomar';
+import RangosFrecuenciaCardiaca from './RangosFrecuenciaCardiaca'
 
 function Components() {
   return (
@@ -17,6 +19,8 @@ function Components() {
       {/* Fila 2 */}
       <Grid item xs={12} md={3}><Porcentaje /></Grid>
       <Grid item xs={12} md={3}><IMCCalculator /></Grid>
+      <Grid item xs={12} md={3}><CuantaAguaTomar /></Grid>
+      <Grid item xs={12} md={3}><RangosFrecuenciaCardiaca /></Grid>
     </Grid>
   )
 }

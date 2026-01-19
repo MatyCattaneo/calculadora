@@ -1,4 +1,4 @@
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 import { useState } from "react";
 
 function Porcentaje() {
@@ -20,49 +20,39 @@ function Porcentaje() {
     }
 
     return (
-        <Box
-            sx={{
-                maxWidth: 300,
-                mx: "auto",
-                mt: 4,
-                p: 3,
-                borderRadius: 2,
-                boxShadow: 3,
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-            }}
-        >
-            <Typography variant="h5" textAlign="center">
+        <Paper elevation={4} sx={{ p: 3, maxWidth: 420, mx: "auto", mt: 4 }}>
+            <Typography variant="h5" textAlign="center" gutterBottom>
                 Porcentaje
             </Typography>
 
-            <TextField
-            label="Número"
-            type="number"
-            value={num1}
-            onChange={(e) => setNum1(e.target.value)}
-            fullWidth
-            />
+            <Box display="flex" flexDirection="column" gap={2}>
+                <TextField
+                label="Número"
+                type="number"
+                value={num1}
+                onChange={(e) => setNum1(e.target.value)}
+                fullWidth
+                />
 
-            <TextField
-            label="Porcentaje"
-            type="number"
-            value={num2}
-            onChange={(e) => setNum2(e.target.value)}
-            fullWidth
-            />
+                <TextField
+                label="Porcentaje"
+                type="number"
+                value={num2}
+                onChange={(e) => setNum2(e.target.value)}
+                fullWidth
+                />
 
-            <Button variant="contained" onClick={calcular}>
-                Calcular Porcentaje
-            </Button>
+                <Button variant="contained" onClick={calcular}>
+                    Calcular Porcentaje
+                </Button>
 
-            {resultado !== null && (
-            <Typography variant="subtitle1" textAlign="center">
-                Resultado: {resultado}
-            </Typography>
-            )}
-        </Box>
+                {resultado !== null && (
+                <Typography variant="subtitle1" textAlign="center">
+                    Resultado: {resultado}
+                </Typography>
+                )}
+            </Box>
+        </Paper>
     );
 }
 

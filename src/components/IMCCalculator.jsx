@@ -61,55 +61,44 @@ export default function IMCCalculator() {
   };
 
   return (
-    <Box    
-      sx={{
-        maxWidth: 300,
-        mx: "auto",
-        mt: 4,
-        p: 3,
-        borderRadius: 2,
-        boxShadow: 3,
-        display: "flex",
-        flexDirection: "column",
-        gap: 2,
-      }}
-    >
-      
-      <Typography variant="h5" align="center">
+    <Paper elevation={4} sx={{ p: 3, maxWidth: 420, mx: "auto", mt: 4 }}>
+      <Typography variant="h5" align="center" gutterBottom>
         Calculadora de IMC
       </Typography>
 
-      <TextField
-        label="Peso (kg)"
-        type="number"
-        value={peso}
-        onChange={(e) => setPeso(e.target.value)}
-        fullWidth
-      />
+      <Box display="flex" flexDirection="column" gap={2}>
+        <TextField
+          label="Peso (kg)"
+          type="number"
+          value={peso}
+          onChange={(e) => setPeso(e.target.value)}
+          fullWidth
+        />
 
-      <TextField
-        label="Altura (m)"
-        type="number"
-        inputProps={{ step: "0.01" }}
-        value={altura}
-        onChange={(e) => setAltura(e.target.value)}
-        fullWidth
-      />
+        <TextField
+          label="Altura (m)"
+          type="number"
+          inputProps={{ step: "0.01" }}
+          value={altura}
+          onChange={(e) => setAltura(e.target.value)}
+          fullWidth
+        />
 
-      <Button variant="contained" onClick={calcularIMC}>
-        Calcular IMC
-      </Button>
+        <Button variant="contained" onClick={calcularIMC}>
+          Calcular IMC
+        </Button>
 
-      {imc && (
-        <Box textAlign="center" mt={2}>
-          <Typography variant="h6" sx={{ color }}>
-            IMC: {imc}
-          </Typography>
-          <Typography variant="subtitle1" sx={{ color }}>
-            {categoria}
-          </Typography>
-        </Box>
-      )}
-    </Box>
+        {imc && (
+          <Box textAlign="center" mt={2}>
+            <Typography variant="h6" sx={{ color }}>
+              IMC: {imc}
+            </Typography>
+            <Typography variant="subtitle1" sx={{ color }}>
+              {categoria}
+            </Typography>
+          </Box>
+        )}
+      </Box>
+    </Paper>
   );
 }
